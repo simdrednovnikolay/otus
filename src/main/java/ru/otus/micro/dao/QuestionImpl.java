@@ -30,9 +30,4 @@ public class QuestionImpl implements Question {
 
         System.out.println(correctAnswer == answer ? "Great\n" : "Incorrect answer\n");
     }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }
