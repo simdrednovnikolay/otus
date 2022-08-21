@@ -2,21 +2,21 @@ package ru.otus.micro.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.otus.micro.dao.Question;
-import ru.otus.micro.dao.QuestionImpl;
-import ru.otus.micro.service.Testing;
-import ru.otus.micro.service.TestingImpl;
+import ru.otus.micro.dao.QuestionDao;
+import ru.otus.micro.dao.QuestionDaoImpl;
+import ru.otus.micro.service.TestingService;
+import ru.otus.micro.service.TestingServiceImpl;
 
 @Configuration
 public class AppConfig {
 
     @Bean
-    Question createQuestion() {
-        return new QuestionImpl();
+    QuestionDao createQuestion() {
+        return new QuestionDaoImpl();
     }
 
     @Bean
-    Testing createTesting(Question q) {
-        return new TestingImpl(q);
+    TestingService createTesting(QuestionDao q) {
+        return new TestingServiceImpl(q);
     }
 }
